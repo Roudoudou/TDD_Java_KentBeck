@@ -1,5 +1,7 @@
 package Dollar;
 
+import java.util.Objects;
+
 /**
  * Created by clucas on 18/01/2015.
  */
@@ -14,7 +16,12 @@ public class Dollar {
         return amount;
     }
 
-    void times(int multiplier) {
-        amount *= multiplier;
+    public boolean equals(Object object){
+        Dollar dollar = (Dollar) object;
+        return amount == dollar.amount;
+    }
+
+    Dollar times(int multiplier) {
+        return new Dollar(amount * multiplier);
     }
 }
