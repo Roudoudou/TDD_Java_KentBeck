@@ -1,12 +1,13 @@
 package Franc;
 
+import Money.Money;
+
 import java.util.Objects;
 
 /**
  * Created by clucas on 18/01/2015.
  */
-public class Franc {
-    private int amount;
+public class Franc extends Money{
 
     public Franc(int amount) {
         this.amount = amount;
@@ -14,11 +15,6 @@ public class Franc {
 
     int amount(){
         return amount;
-    }
-
-    public boolean equals(Object object){
-        Franc franc = (Franc) object;
-        return amount == franc.amount;
     }
 
     Franc times(int multiplier) {

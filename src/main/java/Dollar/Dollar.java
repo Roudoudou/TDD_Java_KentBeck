@@ -1,12 +1,13 @@
 package Dollar;
 
+import Money.Money;
+
 import java.util.Objects;
 
 /**
  * Created by clucas on 18/01/2015.
  */
-public class Dollar {
-    private int amount;
+public class Dollar extends Money{
 
     public Dollar(int amount) {
         this.amount = amount;
@@ -14,11 +15,6 @@ public class Dollar {
 
     int amount(){
         return amount;
-    }
-
-    public boolean equals(Object object){
-        Dollar dollar = (Dollar) object;
-        return amount == dollar.amount;
     }
 
     Dollar times(int multiplier) {
