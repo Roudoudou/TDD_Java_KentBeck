@@ -13,11 +13,11 @@ public class Dollar extends Money{
         this.amount = amount;
     }
 
-    int amount(){
+    public int amount(){
         return amount;
     }
 
-    Dollar times(int multiplier) {
+    public Money times(int multiplier) {
         return new Dollar(amount * multiplier);
     }
 }
