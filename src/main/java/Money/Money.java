@@ -6,17 +6,23 @@ import Franc.Franc;
 /**
  * Created by clucas on 18/01/2015.
  */
-public abstract class Money {
+public class Money {
     protected int amount;
 
     protected String currency;
+
+    public String toString() {
+        return amount + "  " + currency;
+    }
 
     public Money(int amount, String currency){
         this.amount = amount;
         this.currency = currency;
     }
 
-    public abstract Money times(int multiplier);
+    public Money times(int multiplier){
+        return new Money(amount * multiplier, currency);
+    }
 
     public static Money dollar(int amount){
         return new Dollar(amount, "USD");
@@ -28,7 +34,7 @@ public abstract class Money {
 
     public boolean equals(Object object){
         Money money = (Money) object;
-        return amount == money.amount && getClass().equals(money.getClass());
+        return amount == money.amount && currency.equals(money.currency);
     }
 
     public String currency(){
